@@ -1,0 +1,1 @@
+-- https://pgexercises.com/questions/basic/agg2.html
