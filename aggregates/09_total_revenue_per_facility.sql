@@ -4,11 +4,12 @@
 
 SELECT
     f.name,
-    sum(b.slots * CASE WHEN (m.firstname = 'GUEST') THEN
+    sum(b.slots * 
+      CASE WHEN (m.firstname = 'GUEST') THEN
             f.guestcost
-            WHEN m.firstname != 'GUEST' THEN
+           WHEN m.firstname != 'GUEST' THEN
             f.membercost
-END) AS revenue
+      END) AS revenue
 FROM
     cd.facilities f
     INNER JOIN cd.bookings b ON b.facid = f.facid
